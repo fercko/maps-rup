@@ -1,0 +1,2606 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/MAPA_DEPARTAMENTOS_1.js"></script>
+        <script src="data/MAPA_MUNICIPIOS_2.js"></script>
+        <script src="data/SANPEDRO_3.js"></script>
+        <script src="data/POZOAZUL_4.js"></script>
+        <script src="data/SANJAVIER_5.js"></script>
+        <script src="data/FLORENTINOAMEGHINO_6.js"></script>
+        <script src="data/ITACARUARE_7.js"></script>
+        <script src="data/MOJONGRANDE_8.js"></script>
+        <script src="data/SANIGNACIO_9.js"></script>
+        <script src="data/COLONIAPOLANA_10.js"></script>
+        <script src="data/CORPUS_11.js"></script>
+        <script src="data/GRALURQUIZA_12.js"></script>
+        <script src="data/GOBERNADORROCA_13.js"></script>
+        <script src="data/HIPOLITOYRIGOYEN_14.js"></script>
+        <script src="data/JARDINAMERICA_15.js"></script>
+        <script src="data/SANTOPIPO_16.js"></script>
+        <script src="data/OBERA_17.js"></script>
+        <script src="data/CAMPORAMON_18.js"></script>
+        <script src="data/CAMPOVIERA_19.js"></script>
+        <script src="data/COLONIAALBERDI_20.js"></script>
+        <script src="data/GRALALVEAR_21.js"></script>
+        <script src="data/GUARANI_22.js"></script>
+        <script src="data/LOSHELECHOS_23.js"></script>
+        <script src="data/PANAMBI_24.js"></script>
+        <script src="data/SANMARTIN_25.js"></script>
+        <script src="data/MONTECARLO_26.js"></script>
+        <script src="data/CARAGUATAY_27.js"></script>
+        <script src="data/PUERTOPIRAY_28.js"></script>
+        <script src="data/PUERTORICO_29.js"></script>
+        <script src="data/CAPIOVI_30.js"></script>
+        <script src="data/ELALCAZAR_31.js"></script>
+        <script src="data/GARUHAPE_32.js"></script>
+        <script src="data/PUERTOLEONI_33.js"></script>
+        <script src="data/RUIZDEMONTOYA_34.js"></script>
+        <script src="data/LEANDRONALEM_35.js"></script>
+        <script src="data/ALMAFUERTE_36.js"></script>
+        <script src="data/ARROYODELMEDIO_37.js"></script>
+        <script src="data/CAAYARI_38.js"></script>
+        <script src="data/CERROAZUL_39.js"></script>
+        <script src="data/DOSARROYOS_40.js"></script>
+        <script src="data/GOBERNADORLOPEZ_41.js"></script>
+        <script src="data/OLEGARIOVANDRADE_42.js"></script>
+        <script src="data/ESPERANZA_43.js"></script>
+        <script src="data/WANDA_44.js"></script>
+        <script src="data/IGUAZU_45.js"></script>
+        <script src="data/LIBERTAD_46.js"></script>
+        <script src="data/SANVICENTE_47.js"></script>
+        <script src="data/ELSOBERBIO_48.js"></script>
+        <script src="data/BERNARDOIRIGOYEN_49.js"></script>
+        <script src="data/COMANDANTEANDRESITO_50.js"></script>
+        <script src="data/SANANTONIO_51.js"></script>
+        <script src="data/ELDORADO_52.js"></script>
+        <script src="data/9DEJULIO_53.js"></script>
+        <script src="data/COLONIADELICIA_54.js"></script>
+        <script src="data/COLONIAVICTORIA_55.js"></script>
+        <script src="data/SANTIAGODELINIERS_56.js"></script>
+        <script src="data/CONCEPCION_57.js"></script>
+        <script src="data/SANTAMARIA_58.js"></script>
+        <script src="data/POSADAS_59.js"></script>
+        <script src="data/GARUPA_60.js"></script>
+        <script src="data/FACHINAL_61.js"></script>
+        <script src="data/SANTAANA_62.js"></script>
+        <script src="data/BONPLAND_63.js"></script>
+        <script src="data/CANDELARIA_64.js"></script>
+        <script src="data/CERROCORA_65.js"></script>
+        <script src="data/LORETO_66.js"></script>
+        <script src="data/MARTIRES_67.js"></script>
+        <script src="data/PROFUNDIDAD_68.js"></script>
+        <script src="data/CAMPOGRANDE_69.js"></script>
+        <script src="data/ARISTOBULO_70.js"></script>
+        <script src="data/2DEMAYO_71.js"></script>
+        <script src="data/APOSTOLES_72.js"></script>
+        <script src="data/AZARA_73.js"></script>
+        <script src="data/SANJOSE_74.js"></script>
+        <script src="data/TRESCAPONES_75.js"></script>
+        <script src="data/ALBAPOSSE_76.js"></script>
+        <script src="data/COLONIAAURORA_77.js"></script>
+        <script src="data/25DEMAYO_78.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-27.358093013475624,-56.1900115149724],[-26.656138848501396,-54.79008047678438]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_marandu_0');
+        map.getPane('pane_marandu_0').style.zIndex = 400;
+        var layer_marandu_0 = L.tileLayer('https://streetmap.misiones.gob.ar/hot/{z}/{x}/{y}.png', {
+            pane: 'pane_marandu_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_marandu_0;
+        function pop_MAPA_DEPARTAMENTOS_1(feature, layer) {
+        }
+
+        function style_MAPA_DEPARTAMENTOS_1_0() {
+            return {
+                pane: 'pane_MAPA_DEPARTAMENTOS_1',
+                opacity: 1,
+                color: 'rgba(56,128,54,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(77,175,74,1.0)',
+                interactive: false,
+            }
+        }
+        function style_MAPA_DEPARTAMENTOS_1_1() {
+            return {
+                pane: 'pane_MAPA_DEPARTAMENTOS_1',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_MAPA_DEPARTAMENTOS_1');
+        map.getPane('pane_MAPA_DEPARTAMENTOS_1').style.zIndex = 401;
+        map.getPane('pane_MAPA_DEPARTAMENTOS_1').style['mix-blend-mode'] = 'normal';
+        var layer_MAPA_DEPARTAMENTOS_1 = new L.geoJson.multiStyle(json_MAPA_DEPARTAMENTOS_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_MAPA_DEPARTAMENTOS_1',
+            layerName: 'layer_MAPA_DEPARTAMENTOS_1',
+            pane: 'pane_MAPA_DEPARTAMENTOS_1',
+            onEachFeature: pop_MAPA_DEPARTAMENTOS_1,
+            styles: [style_MAPA_DEPARTAMENTOS_1_0,style_MAPA_DEPARTAMENTOS_1_1,]
+        });
+        bounds_group.addLayer(layer_MAPA_DEPARTAMENTOS_1);
+        function pop_MAPA_MUNICIPIOS_2(feature, layer) {
+        }
+
+        function style_MAPA_MUNICIPIOS_2_0() {
+            return {
+                pane: 'pane_MAPA_MUNICIPIOS_2',
+                opacity: 1,
+                color: 'rgba(56,128,54,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(48,109,46,1.0)',
+                interactive: false,
+            }
+        }
+        function style_MAPA_MUNICIPIOS_2_1() {
+            return {
+                pane: 'pane_MAPA_MUNICIPIOS_2',
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: false,
+            }
+        }
+        map.createPane('pane_MAPA_MUNICIPIOS_2');
+        map.getPane('pane_MAPA_MUNICIPIOS_2').style.zIndex = 402;
+        map.getPane('pane_MAPA_MUNICIPIOS_2').style['mix-blend-mode'] = 'normal';
+        var layer_MAPA_MUNICIPIOS_2 = new L.geoJson.multiStyle(json_MAPA_MUNICIPIOS_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_MAPA_MUNICIPIOS_2',
+            layerName: 'layer_MAPA_MUNICIPIOS_2',
+            pane: 'pane_MAPA_MUNICIPIOS_2',
+            onEachFeature: pop_MAPA_MUNICIPIOS_2,
+            styles: [style_MAPA_MUNICIPIOS_2_0,style_MAPA_MUNICIPIOS_2_1,]
+        });
+        bounds_group.addLayer(layer_MAPA_MUNICIPIOS_2);
+        function pop_SANPEDRO_3(feature, layer) {
+        }
+
+        function style_SANPEDRO_3_0() {
+            return {
+                pane: 'pane_SANPEDRO_3',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANPEDRO_3');
+        map.getPane('pane_SANPEDRO_3').style.zIndex = 403;
+        map.getPane('pane_SANPEDRO_3').style['mix-blend-mode'] = 'normal';
+        var layer_SANPEDRO_3 = new L.geoJson(json_SANPEDRO_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANPEDRO_3',
+            layerName: 'layer_SANPEDRO_3',
+            pane: 'pane_SANPEDRO_3',
+            onEachFeature: pop_SANPEDRO_3,
+            style: style_SANPEDRO_3_0,
+        });
+        bounds_group.addLayer(layer_SANPEDRO_3);
+        function pop_POZOAZUL_4(feature, layer) {
+        }
+
+        function style_POZOAZUL_4_0() {
+            return {
+                pane: 'pane_POZOAZUL_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_POZOAZUL_4');
+        map.getPane('pane_POZOAZUL_4').style.zIndex = 404;
+        map.getPane('pane_POZOAZUL_4').style['mix-blend-mode'] = 'normal';
+        var layer_POZOAZUL_4 = new L.geoJson(json_POZOAZUL_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_POZOAZUL_4',
+            layerName: 'layer_POZOAZUL_4',
+            pane: 'pane_POZOAZUL_4',
+            onEachFeature: pop_POZOAZUL_4,
+            style: style_POZOAZUL_4_0,
+        });
+        bounds_group.addLayer(layer_POZOAZUL_4);
+        function pop_SANJAVIER_5(feature, layer) {
+        }
+
+        function style_SANJAVIER_5_0() {
+            return {
+                pane: 'pane_SANJAVIER_5',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(114,155,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANJAVIER_5');
+        map.getPane('pane_SANJAVIER_5').style.zIndex = 405;
+        map.getPane('pane_SANJAVIER_5').style['mix-blend-mode'] = 'normal';
+        var layer_SANJAVIER_5 = new L.geoJson(json_SANJAVIER_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANJAVIER_5',
+            layerName: 'layer_SANJAVIER_5',
+            pane: 'pane_SANJAVIER_5',
+            onEachFeature: pop_SANJAVIER_5,
+            style: style_SANJAVIER_5_0,
+        });
+        bounds_group.addLayer(layer_SANJAVIER_5);
+        function pop_FLORENTINOAMEGHINO_6(feature, layer) {
+        }
+
+        function style_FLORENTINOAMEGHINO_6_0() {
+            return {
+                pane: 'pane_FLORENTINOAMEGHINO_6',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_FLORENTINOAMEGHINO_6');
+        map.getPane('pane_FLORENTINOAMEGHINO_6').style.zIndex = 406;
+        map.getPane('pane_FLORENTINOAMEGHINO_6').style['mix-blend-mode'] = 'normal';
+        var layer_FLORENTINOAMEGHINO_6 = new L.geoJson(json_FLORENTINOAMEGHINO_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FLORENTINOAMEGHINO_6',
+            layerName: 'layer_FLORENTINOAMEGHINO_6',
+            pane: 'pane_FLORENTINOAMEGHINO_6',
+            onEachFeature: pop_FLORENTINOAMEGHINO_6,
+            style: style_FLORENTINOAMEGHINO_6_0,
+        });
+        bounds_group.addLayer(layer_FLORENTINOAMEGHINO_6);
+        function pop_ITACARUARE_7(feature, layer) {
+        }
+
+        function style_ITACARUARE_7_0() {
+            return {
+                pane: 'pane_ITACARUARE_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ITACARUARE_7');
+        map.getPane('pane_ITACARUARE_7').style.zIndex = 407;
+        map.getPane('pane_ITACARUARE_7').style['mix-blend-mode'] = 'normal';
+        var layer_ITACARUARE_7 = new L.geoJson(json_ITACARUARE_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ITACARUARE_7',
+            layerName: 'layer_ITACARUARE_7',
+            pane: 'pane_ITACARUARE_7',
+            onEachFeature: pop_ITACARUARE_7,
+            style: style_ITACARUARE_7_0,
+        });
+        bounds_group.addLayer(layer_ITACARUARE_7);
+        function pop_MOJONGRANDE_8(feature, layer) {
+        }
+
+        function style_MOJONGRANDE_8_0() {
+            return {
+                pane: 'pane_MOJONGRANDE_8',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_MOJONGRANDE_8');
+        map.getPane('pane_MOJONGRANDE_8').style.zIndex = 408;
+        map.getPane('pane_MOJONGRANDE_8').style['mix-blend-mode'] = 'normal';
+        var layer_MOJONGRANDE_8 = new L.geoJson(json_MOJONGRANDE_8, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_MOJONGRANDE_8',
+            layerName: 'layer_MOJONGRANDE_8',
+            pane: 'pane_MOJONGRANDE_8',
+            onEachFeature: pop_MOJONGRANDE_8,
+            style: style_MOJONGRANDE_8_0,
+        });
+        bounds_group.addLayer(layer_MOJONGRANDE_8);
+        function pop_SANIGNACIO_9(feature, layer) {
+        }
+
+        function style_SANIGNACIO_9_0() {
+            return {
+                pane: 'pane_SANIGNACIO_9',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANIGNACIO_9');
+        map.getPane('pane_SANIGNACIO_9').style.zIndex = 409;
+        map.getPane('pane_SANIGNACIO_9').style['mix-blend-mode'] = 'normal';
+        var layer_SANIGNACIO_9 = new L.geoJson(json_SANIGNACIO_9, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANIGNACIO_9',
+            layerName: 'layer_SANIGNACIO_9',
+            pane: 'pane_SANIGNACIO_9',
+            onEachFeature: pop_SANIGNACIO_9,
+            style: style_SANIGNACIO_9_0,
+        });
+        bounds_group.addLayer(layer_SANIGNACIO_9);
+        function pop_COLONIAPOLANA_10(feature, layer) {
+        }
+
+        function style_COLONIAPOLANA_10_0() {
+            return {
+                pane: 'pane_COLONIAPOLANA_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COLONIAPOLANA_10');
+        map.getPane('pane_COLONIAPOLANA_10').style.zIndex = 410;
+        map.getPane('pane_COLONIAPOLANA_10').style['mix-blend-mode'] = 'normal';
+        var layer_COLONIAPOLANA_10 = new L.geoJson(json_COLONIAPOLANA_10, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COLONIAPOLANA_10',
+            layerName: 'layer_COLONIAPOLANA_10',
+            pane: 'pane_COLONIAPOLANA_10',
+            onEachFeature: pop_COLONIAPOLANA_10,
+            style: style_COLONIAPOLANA_10_0,
+        });
+        bounds_group.addLayer(layer_COLONIAPOLANA_10);
+        function pop_CORPUS_11(feature, layer) {
+        }
+
+        function style_CORPUS_11_0() {
+            return {
+                pane: 'pane_CORPUS_11',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CORPUS_11');
+        map.getPane('pane_CORPUS_11').style.zIndex = 411;
+        map.getPane('pane_CORPUS_11').style['mix-blend-mode'] = 'normal';
+        var layer_CORPUS_11 = new L.geoJson(json_CORPUS_11, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CORPUS_11',
+            layerName: 'layer_CORPUS_11',
+            pane: 'pane_CORPUS_11',
+            onEachFeature: pop_CORPUS_11,
+            style: style_CORPUS_11_0,
+        });
+        bounds_group.addLayer(layer_CORPUS_11);
+        function pop_GRALURQUIZA_12(feature, layer) {
+        }
+
+        function style_GRALURQUIZA_12_0() {
+            return {
+                pane: 'pane_GRALURQUIZA_12',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GRALURQUIZA_12');
+        map.getPane('pane_GRALURQUIZA_12').style.zIndex = 412;
+        map.getPane('pane_GRALURQUIZA_12').style['mix-blend-mode'] = 'normal';
+        var layer_GRALURQUIZA_12 = new L.geoJson(json_GRALURQUIZA_12, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GRALURQUIZA_12',
+            layerName: 'layer_GRALURQUIZA_12',
+            pane: 'pane_GRALURQUIZA_12',
+            onEachFeature: pop_GRALURQUIZA_12,
+            style: style_GRALURQUIZA_12_0,
+        });
+        bounds_group.addLayer(layer_GRALURQUIZA_12);
+        function pop_GOBERNADORROCA_13(feature, layer) {
+        }
+
+        function style_GOBERNADORROCA_13_0() {
+            return {
+                pane: 'pane_GOBERNADORROCA_13',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GOBERNADORROCA_13');
+        map.getPane('pane_GOBERNADORROCA_13').style.zIndex = 413;
+        map.getPane('pane_GOBERNADORROCA_13').style['mix-blend-mode'] = 'normal';
+        var layer_GOBERNADORROCA_13 = new L.geoJson(json_GOBERNADORROCA_13, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GOBERNADORROCA_13',
+            layerName: 'layer_GOBERNADORROCA_13',
+            pane: 'pane_GOBERNADORROCA_13',
+            onEachFeature: pop_GOBERNADORROCA_13,
+            style: style_GOBERNADORROCA_13_0,
+        });
+        bounds_group.addLayer(layer_GOBERNADORROCA_13);
+        function pop_HIPOLITOYRIGOYEN_14(feature, layer) {
+        }
+
+        function style_HIPOLITOYRIGOYEN_14_0() {
+            return {
+                pane: 'pane_HIPOLITOYRIGOYEN_14',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_HIPOLITOYRIGOYEN_14');
+        map.getPane('pane_HIPOLITOYRIGOYEN_14').style.zIndex = 414;
+        map.getPane('pane_HIPOLITOYRIGOYEN_14').style['mix-blend-mode'] = 'normal';
+        var layer_HIPOLITOYRIGOYEN_14 = new L.geoJson(json_HIPOLITOYRIGOYEN_14, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_HIPOLITOYRIGOYEN_14',
+            layerName: 'layer_HIPOLITOYRIGOYEN_14',
+            pane: 'pane_HIPOLITOYRIGOYEN_14',
+            onEachFeature: pop_HIPOLITOYRIGOYEN_14,
+            style: style_HIPOLITOYRIGOYEN_14_0,
+        });
+        bounds_group.addLayer(layer_HIPOLITOYRIGOYEN_14);
+        function pop_JARDINAMERICA_15(feature, layer) {
+        }
+
+        function style_JARDINAMERICA_15_0() {
+            return {
+                pane: 'pane_JARDINAMERICA_15',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_JARDINAMERICA_15');
+        map.getPane('pane_JARDINAMERICA_15').style.zIndex = 415;
+        map.getPane('pane_JARDINAMERICA_15').style['mix-blend-mode'] = 'normal';
+        var layer_JARDINAMERICA_15 = new L.geoJson(json_JARDINAMERICA_15, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_JARDINAMERICA_15',
+            layerName: 'layer_JARDINAMERICA_15',
+            pane: 'pane_JARDINAMERICA_15',
+            onEachFeature: pop_JARDINAMERICA_15,
+            style: style_JARDINAMERICA_15_0,
+        });
+        bounds_group.addLayer(layer_JARDINAMERICA_15);
+        function pop_SANTOPIPO_16(feature, layer) {
+        }
+
+        function style_SANTOPIPO_16_0() {
+            return {
+                pane: 'pane_SANTOPIPO_16',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANTOPIPO_16');
+        map.getPane('pane_SANTOPIPO_16').style.zIndex = 416;
+        map.getPane('pane_SANTOPIPO_16').style['mix-blend-mode'] = 'normal';
+        var layer_SANTOPIPO_16 = new L.geoJson(json_SANTOPIPO_16, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANTOPIPO_16',
+            layerName: 'layer_SANTOPIPO_16',
+            pane: 'pane_SANTOPIPO_16',
+            onEachFeature: pop_SANTOPIPO_16,
+            style: style_SANTOPIPO_16_0,
+        });
+        bounds_group.addLayer(layer_SANTOPIPO_16);
+        function pop_OBERA_17(feature, layer) {
+        }
+
+        function style_OBERA_17_0() {
+            return {
+                pane: 'pane_OBERA_17',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(114,155,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_OBERA_17');
+        map.getPane('pane_OBERA_17').style.zIndex = 417;
+        map.getPane('pane_OBERA_17').style['mix-blend-mode'] = 'normal';
+        var layer_OBERA_17 = new L.geoJson(json_OBERA_17, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_OBERA_17',
+            layerName: 'layer_OBERA_17',
+            pane: 'pane_OBERA_17',
+            onEachFeature: pop_OBERA_17,
+            style: style_OBERA_17_0,
+        });
+        bounds_group.addLayer(layer_OBERA_17);
+        function pop_CAMPORAMON_18(feature, layer) {
+        }
+
+        function style_CAMPORAMON_18_0() {
+            return {
+                pane: 'pane_CAMPORAMON_18',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CAMPORAMON_18');
+        map.getPane('pane_CAMPORAMON_18').style.zIndex = 418;
+        map.getPane('pane_CAMPORAMON_18').style['mix-blend-mode'] = 'normal';
+        var layer_CAMPORAMON_18 = new L.geoJson(json_CAMPORAMON_18, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CAMPORAMON_18',
+            layerName: 'layer_CAMPORAMON_18',
+            pane: 'pane_CAMPORAMON_18',
+            onEachFeature: pop_CAMPORAMON_18,
+            style: style_CAMPORAMON_18_0,
+        });
+        bounds_group.addLayer(layer_CAMPORAMON_18);
+        function pop_CAMPOVIERA_19(feature, layer) {
+        }
+
+        function style_CAMPOVIERA_19_0() {
+            return {
+                pane: 'pane_CAMPOVIERA_19',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CAMPOVIERA_19');
+        map.getPane('pane_CAMPOVIERA_19').style.zIndex = 419;
+        map.getPane('pane_CAMPOVIERA_19').style['mix-blend-mode'] = 'normal';
+        var layer_CAMPOVIERA_19 = new L.geoJson(json_CAMPOVIERA_19, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CAMPOVIERA_19',
+            layerName: 'layer_CAMPOVIERA_19',
+            pane: 'pane_CAMPOVIERA_19',
+            onEachFeature: pop_CAMPOVIERA_19,
+            style: style_CAMPOVIERA_19_0,
+        });
+        bounds_group.addLayer(layer_CAMPOVIERA_19);
+        function pop_COLONIAALBERDI_20(feature, layer) {
+        }
+
+        function style_COLONIAALBERDI_20_0() {
+            return {
+                pane: 'pane_COLONIAALBERDI_20',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COLONIAALBERDI_20');
+        map.getPane('pane_COLONIAALBERDI_20').style.zIndex = 420;
+        map.getPane('pane_COLONIAALBERDI_20').style['mix-blend-mode'] = 'normal';
+        var layer_COLONIAALBERDI_20 = new L.geoJson(json_COLONIAALBERDI_20, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COLONIAALBERDI_20',
+            layerName: 'layer_COLONIAALBERDI_20',
+            pane: 'pane_COLONIAALBERDI_20',
+            onEachFeature: pop_COLONIAALBERDI_20,
+            style: style_COLONIAALBERDI_20_0,
+        });
+        bounds_group.addLayer(layer_COLONIAALBERDI_20);
+        function pop_GRALALVEAR_21(feature, layer) {
+        }
+
+        function style_GRALALVEAR_21_0() {
+            return {
+                pane: 'pane_GRALALVEAR_21',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GRALALVEAR_21');
+        map.getPane('pane_GRALALVEAR_21').style.zIndex = 421;
+        map.getPane('pane_GRALALVEAR_21').style['mix-blend-mode'] = 'normal';
+        var layer_GRALALVEAR_21 = new L.geoJson(json_GRALALVEAR_21, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GRALALVEAR_21',
+            layerName: 'layer_GRALALVEAR_21',
+            pane: 'pane_GRALALVEAR_21',
+            onEachFeature: pop_GRALALVEAR_21,
+            style: style_GRALALVEAR_21_0,
+        });
+        bounds_group.addLayer(layer_GRALALVEAR_21);
+        function pop_GUARANI_22(feature, layer) {
+        }
+
+        function style_GUARANI_22_0() {
+            return {
+                pane: 'pane_GUARANI_22',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GUARANI_22');
+        map.getPane('pane_GUARANI_22').style.zIndex = 422;
+        map.getPane('pane_GUARANI_22').style['mix-blend-mode'] = 'normal';
+        var layer_GUARANI_22 = new L.geoJson(json_GUARANI_22, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GUARANI_22',
+            layerName: 'layer_GUARANI_22',
+            pane: 'pane_GUARANI_22',
+            onEachFeature: pop_GUARANI_22,
+            style: style_GUARANI_22_0,
+        });
+        bounds_group.addLayer(layer_GUARANI_22);
+        function pop_LOSHELECHOS_23(feature, layer) {
+        }
+
+        function style_LOSHELECHOS_23_0() {
+            return {
+                pane: 'pane_LOSHELECHOS_23',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_LOSHELECHOS_23');
+        map.getPane('pane_LOSHELECHOS_23').style.zIndex = 423;
+        map.getPane('pane_LOSHELECHOS_23').style['mix-blend-mode'] = 'normal';
+        var layer_LOSHELECHOS_23 = new L.geoJson(json_LOSHELECHOS_23, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_LOSHELECHOS_23',
+            layerName: 'layer_LOSHELECHOS_23',
+            pane: 'pane_LOSHELECHOS_23',
+            onEachFeature: pop_LOSHELECHOS_23,
+            style: style_LOSHELECHOS_23_0,
+        });
+        bounds_group.addLayer(layer_LOSHELECHOS_23);
+        function pop_PANAMBI_24(feature, layer) {
+        }
+
+        function style_PANAMBI_24_0() {
+            return {
+                pane: 'pane_PANAMBI_24',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,60,57,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_PANAMBI_24');
+        map.getPane('pane_PANAMBI_24').style.zIndex = 424;
+        map.getPane('pane_PANAMBI_24').style['mix-blend-mode'] = 'normal';
+        var layer_PANAMBI_24 = new L.geoJson(json_PANAMBI_24, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PANAMBI_24',
+            layerName: 'layer_PANAMBI_24',
+            pane: 'pane_PANAMBI_24',
+            onEachFeature: pop_PANAMBI_24,
+            style: style_PANAMBI_24_0,
+        });
+        bounds_group.addLayer(layer_PANAMBI_24);
+        function pop_SANMARTIN_25(feature, layer) {
+        }
+
+        function style_SANMARTIN_25_0() {
+            return {
+                pane: 'pane_SANMARTIN_25',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANMARTIN_25');
+        map.getPane('pane_SANMARTIN_25').style.zIndex = 425;
+        map.getPane('pane_SANMARTIN_25').style['mix-blend-mode'] = 'normal';
+        var layer_SANMARTIN_25 = new L.geoJson(json_SANMARTIN_25, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANMARTIN_25',
+            layerName: 'layer_SANMARTIN_25',
+            pane: 'pane_SANMARTIN_25',
+            onEachFeature: pop_SANMARTIN_25,
+            style: style_SANMARTIN_25_0,
+        });
+        bounds_group.addLayer(layer_SANMARTIN_25);
+        function pop_MONTECARLO_26(feature, layer) {
+        }
+
+        function style_MONTECARLO_26_0() {
+            return {
+                pane: 'pane_MONTECARLO_26',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_MONTECARLO_26');
+        map.getPane('pane_MONTECARLO_26').style.zIndex = 426;
+        map.getPane('pane_MONTECARLO_26').style['mix-blend-mode'] = 'normal';
+        var layer_MONTECARLO_26 = new L.geoJson(json_MONTECARLO_26, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_MONTECARLO_26',
+            layerName: 'layer_MONTECARLO_26',
+            pane: 'pane_MONTECARLO_26',
+            onEachFeature: pop_MONTECARLO_26,
+            style: style_MONTECARLO_26_0,
+        });
+        bounds_group.addLayer(layer_MONTECARLO_26);
+        function pop_CARAGUATAY_27(feature, layer) {
+        }
+
+        function style_CARAGUATAY_27_0() {
+            return {
+                pane: 'pane_CARAGUATAY_27',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(141,90,153,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CARAGUATAY_27');
+        map.getPane('pane_CARAGUATAY_27').style.zIndex = 427;
+        map.getPane('pane_CARAGUATAY_27').style['mix-blend-mode'] = 'normal';
+        var layer_CARAGUATAY_27 = new L.geoJson(json_CARAGUATAY_27, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CARAGUATAY_27',
+            layerName: 'layer_CARAGUATAY_27',
+            pane: 'pane_CARAGUATAY_27',
+            onEachFeature: pop_CARAGUATAY_27,
+            style: style_CARAGUATAY_27_0,
+        });
+        bounds_group.addLayer(layer_CARAGUATAY_27);
+        function pop_PUERTOPIRAY_28(feature, layer) {
+        }
+
+        function style_PUERTOPIRAY_28_0() {
+            return {
+                pane: 'pane_PUERTOPIRAY_28',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_PUERTOPIRAY_28');
+        map.getPane('pane_PUERTOPIRAY_28').style.zIndex = 428;
+        map.getPane('pane_PUERTOPIRAY_28').style['mix-blend-mode'] = 'normal';
+        var layer_PUERTOPIRAY_28 = new L.geoJson(json_PUERTOPIRAY_28, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PUERTOPIRAY_28',
+            layerName: 'layer_PUERTOPIRAY_28',
+            pane: 'pane_PUERTOPIRAY_28',
+            onEachFeature: pop_PUERTOPIRAY_28,
+            style: style_PUERTOPIRAY_28_0,
+        });
+        bounds_group.addLayer(layer_PUERTOPIRAY_28);
+        function pop_PUERTORICO_29(feature, layer) {
+        }
+
+        function style_PUERTORICO_29_0() {
+            return {
+                pane: 'pane_PUERTORICO_29',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_PUERTORICO_29');
+        map.getPane('pane_PUERTORICO_29').style.zIndex = 429;
+        map.getPane('pane_PUERTORICO_29').style['mix-blend-mode'] = 'normal';
+        var layer_PUERTORICO_29 = new L.geoJson(json_PUERTORICO_29, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PUERTORICO_29',
+            layerName: 'layer_PUERTORICO_29',
+            pane: 'pane_PUERTORICO_29',
+            onEachFeature: pop_PUERTORICO_29,
+            style: style_PUERTORICO_29_0,
+        });
+        bounds_group.addLayer(layer_PUERTORICO_29);
+        function pop_CAPIOVI_30(feature, layer) {
+        }
+
+        function style_CAPIOVI_30_0() {
+            return {
+                pane: 'pane_CAPIOVI_30',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CAPIOVI_30');
+        map.getPane('pane_CAPIOVI_30').style.zIndex = 430;
+        map.getPane('pane_CAPIOVI_30').style['mix-blend-mode'] = 'normal';
+        var layer_CAPIOVI_30 = new L.geoJson(json_CAPIOVI_30, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CAPIOVI_30',
+            layerName: 'layer_CAPIOVI_30',
+            pane: 'pane_CAPIOVI_30',
+            onEachFeature: pop_CAPIOVI_30,
+            style: style_CAPIOVI_30_0,
+        });
+        bounds_group.addLayer(layer_CAPIOVI_30);
+        function pop_ELALCAZAR_31(feature, layer) {
+        }
+
+        function style_ELALCAZAR_31_0() {
+            return {
+                pane: 'pane_ELALCAZAR_31',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ELALCAZAR_31');
+        map.getPane('pane_ELALCAZAR_31').style.zIndex = 431;
+        map.getPane('pane_ELALCAZAR_31').style['mix-blend-mode'] = 'normal';
+        var layer_ELALCAZAR_31 = new L.geoJson(json_ELALCAZAR_31, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ELALCAZAR_31',
+            layerName: 'layer_ELALCAZAR_31',
+            pane: 'pane_ELALCAZAR_31',
+            onEachFeature: pop_ELALCAZAR_31,
+            style: style_ELALCAZAR_31_0,
+        });
+        bounds_group.addLayer(layer_ELALCAZAR_31);
+        function pop_GARUHAPE_32(feature, layer) {
+        }
+
+        function style_GARUHAPE_32_0() {
+            return {
+                pane: 'pane_GARUHAPE_32',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GARUHAPE_32');
+        map.getPane('pane_GARUHAPE_32').style.zIndex = 432;
+        map.getPane('pane_GARUHAPE_32').style['mix-blend-mode'] = 'normal';
+        var layer_GARUHAPE_32 = new L.geoJson(json_GARUHAPE_32, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GARUHAPE_32',
+            layerName: 'layer_GARUHAPE_32',
+            pane: 'pane_GARUHAPE_32',
+            onEachFeature: pop_GARUHAPE_32,
+            style: style_GARUHAPE_32_0,
+        });
+        bounds_group.addLayer(layer_GARUHAPE_32);
+        function pop_PUERTOLEONI_33(feature, layer) {
+        }
+
+        function style_PUERTOLEONI_33_0() {
+            return {
+                pane: 'pane_PUERTOLEONI_33',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_PUERTOLEONI_33');
+        map.getPane('pane_PUERTOLEONI_33').style.zIndex = 433;
+        map.getPane('pane_PUERTOLEONI_33').style['mix-blend-mode'] = 'normal';
+        var layer_PUERTOLEONI_33 = new L.geoJson(json_PUERTOLEONI_33, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PUERTOLEONI_33',
+            layerName: 'layer_PUERTOLEONI_33',
+            pane: 'pane_PUERTOLEONI_33',
+            onEachFeature: pop_PUERTOLEONI_33,
+            style: style_PUERTOLEONI_33_0,
+        });
+        bounds_group.addLayer(layer_PUERTOLEONI_33);
+        function pop_RUIZDEMONTOYA_34(feature, layer) {
+        }
+
+        function style_RUIZDEMONTOYA_34_0() {
+            return {
+                pane: 'pane_RUIZDEMONTOYA_34',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_RUIZDEMONTOYA_34');
+        map.getPane('pane_RUIZDEMONTOYA_34').style.zIndex = 434;
+        map.getPane('pane_RUIZDEMONTOYA_34').style['mix-blend-mode'] = 'normal';
+        var layer_RUIZDEMONTOYA_34 = new L.geoJson(json_RUIZDEMONTOYA_34, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_RUIZDEMONTOYA_34',
+            layerName: 'layer_RUIZDEMONTOYA_34',
+            pane: 'pane_RUIZDEMONTOYA_34',
+            onEachFeature: pop_RUIZDEMONTOYA_34,
+            style: style_RUIZDEMONTOYA_34_0,
+        });
+        bounds_group.addLayer(layer_RUIZDEMONTOYA_34);
+        function pop_LEANDRONALEM_35(feature, layer) {
+        }
+
+        function style_LEANDRONALEM_35_0() {
+            return {
+                pane: 'pane_LEANDRONALEM_35',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_LEANDRONALEM_35');
+        map.getPane('pane_LEANDRONALEM_35').style.zIndex = 435;
+        map.getPane('pane_LEANDRONALEM_35').style['mix-blend-mode'] = 'normal';
+        var layer_LEANDRONALEM_35 = new L.geoJson(json_LEANDRONALEM_35, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_LEANDRONALEM_35',
+            layerName: 'layer_LEANDRONALEM_35',
+            pane: 'pane_LEANDRONALEM_35',
+            onEachFeature: pop_LEANDRONALEM_35,
+            style: style_LEANDRONALEM_35_0,
+        });
+        bounds_group.addLayer(layer_LEANDRONALEM_35);
+        function pop_ALMAFUERTE_36(feature, layer) {
+        }
+
+        function style_ALMAFUERTE_36_0() {
+            return {
+                pane: 'pane_ALMAFUERTE_36',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ALMAFUERTE_36');
+        map.getPane('pane_ALMAFUERTE_36').style.zIndex = 436;
+        map.getPane('pane_ALMAFUERTE_36').style['mix-blend-mode'] = 'normal';
+        var layer_ALMAFUERTE_36 = new L.geoJson(json_ALMAFUERTE_36, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ALMAFUERTE_36',
+            layerName: 'layer_ALMAFUERTE_36',
+            pane: 'pane_ALMAFUERTE_36',
+            onEachFeature: pop_ALMAFUERTE_36,
+            style: style_ALMAFUERTE_36_0,
+        });
+        bounds_group.addLayer(layer_ALMAFUERTE_36);
+        function pop_ARROYODELMEDIO_37(feature, layer) {
+        }
+
+        function style_ARROYODELMEDIO_37_0() {
+            return {
+                pane: 'pane_ARROYODELMEDIO_37',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ARROYODELMEDIO_37');
+        map.getPane('pane_ARROYODELMEDIO_37').style.zIndex = 437;
+        map.getPane('pane_ARROYODELMEDIO_37').style['mix-blend-mode'] = 'normal';
+        var layer_ARROYODELMEDIO_37 = new L.geoJson(json_ARROYODELMEDIO_37, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ARROYODELMEDIO_37',
+            layerName: 'layer_ARROYODELMEDIO_37',
+            pane: 'pane_ARROYODELMEDIO_37',
+            onEachFeature: pop_ARROYODELMEDIO_37,
+            style: style_ARROYODELMEDIO_37_0,
+        });
+        bounds_group.addLayer(layer_ARROYODELMEDIO_37);
+        function pop_CAAYARI_38(feature, layer) {
+        }
+
+        function style_CAAYARI_38_0() {
+            return {
+                pane: 'pane_CAAYARI_38',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CAAYARI_38');
+        map.getPane('pane_CAAYARI_38').style.zIndex = 438;
+        map.getPane('pane_CAAYARI_38').style['mix-blend-mode'] = 'normal';
+        var layer_CAAYARI_38 = new L.geoJson(json_CAAYARI_38, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CAAYARI_38',
+            layerName: 'layer_CAAYARI_38',
+            pane: 'pane_CAAYARI_38',
+            onEachFeature: pop_CAAYARI_38,
+            style: style_CAAYARI_38_0,
+        });
+        bounds_group.addLayer(layer_CAAYARI_38);
+        function pop_CERROAZUL_39(feature, layer) {
+        }
+
+        function style_CERROAZUL_39_0() {
+            return {
+                pane: 'pane_CERROAZUL_39',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CERROAZUL_39');
+        map.getPane('pane_CERROAZUL_39').style.zIndex = 439;
+        map.getPane('pane_CERROAZUL_39').style['mix-blend-mode'] = 'normal';
+        var layer_CERROAZUL_39 = new L.geoJson(json_CERROAZUL_39, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CERROAZUL_39',
+            layerName: 'layer_CERROAZUL_39',
+            pane: 'pane_CERROAZUL_39',
+            onEachFeature: pop_CERROAZUL_39,
+            style: style_CERROAZUL_39_0,
+        });
+        bounds_group.addLayer(layer_CERROAZUL_39);
+        function pop_DOSARROYOS_40(feature, layer) {
+        }
+
+        function style_DOSARROYOS_40_0() {
+            return {
+                pane: 'pane_DOSARROYOS_40',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_DOSARROYOS_40');
+        map.getPane('pane_DOSARROYOS_40').style.zIndex = 440;
+        map.getPane('pane_DOSARROYOS_40').style['mix-blend-mode'] = 'normal';
+        var layer_DOSARROYOS_40 = new L.geoJson(json_DOSARROYOS_40, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_DOSARROYOS_40',
+            layerName: 'layer_DOSARROYOS_40',
+            pane: 'pane_DOSARROYOS_40',
+            onEachFeature: pop_DOSARROYOS_40,
+            style: style_DOSARROYOS_40_0,
+        });
+        bounds_group.addLayer(layer_DOSARROYOS_40);
+        function pop_GOBERNADORLOPEZ_41(feature, layer) {
+        }
+
+        function style_GOBERNADORLOPEZ_41_0() {
+            return {
+                pane: 'pane_GOBERNADORLOPEZ_41',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,60,57,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GOBERNADORLOPEZ_41');
+        map.getPane('pane_GOBERNADORLOPEZ_41').style.zIndex = 441;
+        map.getPane('pane_GOBERNADORLOPEZ_41').style['mix-blend-mode'] = 'normal';
+        var layer_GOBERNADORLOPEZ_41 = new L.geoJson(json_GOBERNADORLOPEZ_41, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GOBERNADORLOPEZ_41',
+            layerName: 'layer_GOBERNADORLOPEZ_41',
+            pane: 'pane_GOBERNADORLOPEZ_41',
+            onEachFeature: pop_GOBERNADORLOPEZ_41,
+            style: style_GOBERNADORLOPEZ_41_0,
+        });
+        bounds_group.addLayer(layer_GOBERNADORLOPEZ_41);
+        function pop_OLEGARIOVANDRADE_42(feature, layer) {
+        }
+
+        function style_OLEGARIOVANDRADE_42_0() {
+            return {
+                pane: 'pane_OLEGARIOVANDRADE_42',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_OLEGARIOVANDRADE_42');
+        map.getPane('pane_OLEGARIOVANDRADE_42').style.zIndex = 442;
+        map.getPane('pane_OLEGARIOVANDRADE_42').style['mix-blend-mode'] = 'normal';
+        var layer_OLEGARIOVANDRADE_42 = new L.geoJson(json_OLEGARIOVANDRADE_42, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_OLEGARIOVANDRADE_42',
+            layerName: 'layer_OLEGARIOVANDRADE_42',
+            pane: 'pane_OLEGARIOVANDRADE_42',
+            onEachFeature: pop_OLEGARIOVANDRADE_42,
+            style: style_OLEGARIOVANDRADE_42_0,
+        });
+        bounds_group.addLayer(layer_OLEGARIOVANDRADE_42);
+        function pop_ESPERANZA_43(feature, layer) {
+        }
+
+        function style_ESPERANZA_43_0() {
+            return {
+                pane: 'pane_ESPERANZA_43',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ESPERANZA_43');
+        map.getPane('pane_ESPERANZA_43').style.zIndex = 443;
+        map.getPane('pane_ESPERANZA_43').style['mix-blend-mode'] = 'normal';
+        var layer_ESPERANZA_43 = new L.geoJson(json_ESPERANZA_43, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ESPERANZA_43',
+            layerName: 'layer_ESPERANZA_43',
+            pane: 'pane_ESPERANZA_43',
+            onEachFeature: pop_ESPERANZA_43,
+            style: style_ESPERANZA_43_0,
+        });
+        bounds_group.addLayer(layer_ESPERANZA_43);
+        function pop_WANDA_44(feature, layer) {
+        }
+
+        function style_WANDA_44_0() {
+            return {
+                pane: 'pane_WANDA_44',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(141,90,153,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_WANDA_44');
+        map.getPane('pane_WANDA_44').style.zIndex = 444;
+        map.getPane('pane_WANDA_44').style['mix-blend-mode'] = 'normal';
+        var layer_WANDA_44 = new L.geoJson(json_WANDA_44, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_WANDA_44',
+            layerName: 'layer_WANDA_44',
+            pane: 'pane_WANDA_44',
+            onEachFeature: pop_WANDA_44,
+            style: style_WANDA_44_0,
+        });
+        bounds_group.addLayer(layer_WANDA_44);
+        function pop_IGUAZU_45(feature, layer) {
+        }
+
+        function style_IGUAZU_45_0() {
+            return {
+                pane: 'pane_IGUAZU_45',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_IGUAZU_45');
+        map.getPane('pane_IGUAZU_45').style.zIndex = 445;
+        map.getPane('pane_IGUAZU_45').style['mix-blend-mode'] = 'normal';
+        var layer_IGUAZU_45 = new L.geoJson(json_IGUAZU_45, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_IGUAZU_45',
+            layerName: 'layer_IGUAZU_45',
+            pane: 'pane_IGUAZU_45',
+            onEachFeature: pop_IGUAZU_45,
+            style: style_IGUAZU_45_0,
+        });
+        bounds_group.addLayer(layer_IGUAZU_45);
+        function pop_LIBERTAD_46(feature, layer) {
+        }
+
+        function style_LIBERTAD_46_0() {
+            return {
+                pane: 'pane_LIBERTAD_46',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(114,155,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_LIBERTAD_46');
+        map.getPane('pane_LIBERTAD_46').style.zIndex = 446;
+        map.getPane('pane_LIBERTAD_46').style['mix-blend-mode'] = 'normal';
+        var layer_LIBERTAD_46 = new L.geoJson(json_LIBERTAD_46, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_LIBERTAD_46',
+            layerName: 'layer_LIBERTAD_46',
+            pane: 'pane_LIBERTAD_46',
+            onEachFeature: pop_LIBERTAD_46,
+            style: style_LIBERTAD_46_0,
+        });
+        bounds_group.addLayer(layer_LIBERTAD_46);
+        function pop_SANVICENTE_47(feature, layer) {
+        }
+
+        function style_SANVICENTE_47_0() {
+            return {
+                pane: 'pane_SANVICENTE_47',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANVICENTE_47');
+        map.getPane('pane_SANVICENTE_47').style.zIndex = 447;
+        map.getPane('pane_SANVICENTE_47').style['mix-blend-mode'] = 'normal';
+        var layer_SANVICENTE_47 = new L.geoJson(json_SANVICENTE_47, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANVICENTE_47',
+            layerName: 'layer_SANVICENTE_47',
+            pane: 'pane_SANVICENTE_47',
+            onEachFeature: pop_SANVICENTE_47,
+            style: style_SANVICENTE_47_0,
+        });
+        bounds_group.addLayer(layer_SANVICENTE_47);
+        function pop_ELSOBERBIO_48(feature, layer) {
+        }
+
+        function style_ELSOBERBIO_48_0() {
+            return {
+                pane: 'pane_ELSOBERBIO_48',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ELSOBERBIO_48');
+        map.getPane('pane_ELSOBERBIO_48').style.zIndex = 448;
+        map.getPane('pane_ELSOBERBIO_48').style['mix-blend-mode'] = 'normal';
+        var layer_ELSOBERBIO_48 = new L.geoJson(json_ELSOBERBIO_48, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ELSOBERBIO_48',
+            layerName: 'layer_ELSOBERBIO_48',
+            pane: 'pane_ELSOBERBIO_48',
+            onEachFeature: pop_ELSOBERBIO_48,
+            style: style_ELSOBERBIO_48_0,
+        });
+        bounds_group.addLayer(layer_ELSOBERBIO_48);
+        function pop_BERNARDOIRIGOYEN_49(feature, layer) {
+        }
+
+        function style_BERNARDOIRIGOYEN_49_0() {
+            return {
+                pane: 'pane_BERNARDOIRIGOYEN_49',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_BERNARDOIRIGOYEN_49');
+        map.getPane('pane_BERNARDOIRIGOYEN_49').style.zIndex = 449;
+        map.getPane('pane_BERNARDOIRIGOYEN_49').style['mix-blend-mode'] = 'normal';
+        var layer_BERNARDOIRIGOYEN_49 = new L.geoJson(json_BERNARDOIRIGOYEN_49, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_BERNARDOIRIGOYEN_49',
+            layerName: 'layer_BERNARDOIRIGOYEN_49',
+            pane: 'pane_BERNARDOIRIGOYEN_49',
+            onEachFeature: pop_BERNARDOIRIGOYEN_49,
+            style: style_BERNARDOIRIGOYEN_49_0,
+        });
+        bounds_group.addLayer(layer_BERNARDOIRIGOYEN_49);
+        function pop_COMANDANTEANDRESITO_50(feature, layer) {
+        }
+
+        function style_COMANDANTEANDRESITO_50_0() {
+            return {
+                pane: 'pane_COMANDANTEANDRESITO_50',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COMANDANTEANDRESITO_50');
+        map.getPane('pane_COMANDANTEANDRESITO_50').style.zIndex = 450;
+        map.getPane('pane_COMANDANTEANDRESITO_50').style['mix-blend-mode'] = 'normal';
+        var layer_COMANDANTEANDRESITO_50 = new L.geoJson(json_COMANDANTEANDRESITO_50, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COMANDANTEANDRESITO_50',
+            layerName: 'layer_COMANDANTEANDRESITO_50',
+            pane: 'pane_COMANDANTEANDRESITO_50',
+            onEachFeature: pop_COMANDANTEANDRESITO_50,
+            style: style_COMANDANTEANDRESITO_50_0,
+        });
+        bounds_group.addLayer(layer_COMANDANTEANDRESITO_50);
+        function pop_SANANTONIO_51(feature, layer) {
+        }
+
+        function style_SANANTONIO_51_0() {
+            return {
+                pane: 'pane_SANANTONIO_51',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANANTONIO_51');
+        map.getPane('pane_SANANTONIO_51').style.zIndex = 451;
+        map.getPane('pane_SANANTONIO_51').style['mix-blend-mode'] = 'normal';
+        var layer_SANANTONIO_51 = new L.geoJson(json_SANANTONIO_51, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANANTONIO_51',
+            layerName: 'layer_SANANTONIO_51',
+            pane: 'pane_SANANTONIO_51',
+            onEachFeature: pop_SANANTONIO_51,
+            style: style_SANANTONIO_51_0,
+        });
+        bounds_group.addLayer(layer_SANANTONIO_51);
+        function pop_ELDORADO_52(feature, layer) {
+        }
+
+        function style_ELDORADO_52_0() {
+            return {
+                pane: 'pane_ELDORADO_52',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ELDORADO_52');
+        map.getPane('pane_ELDORADO_52').style.zIndex = 452;
+        map.getPane('pane_ELDORADO_52').style['mix-blend-mode'] = 'normal';
+        var layer_ELDORADO_52 = new L.geoJson(json_ELDORADO_52, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ELDORADO_52',
+            layerName: 'layer_ELDORADO_52',
+            pane: 'pane_ELDORADO_52',
+            onEachFeature: pop_ELDORADO_52,
+            style: style_ELDORADO_52_0,
+        });
+        bounds_group.addLayer(layer_ELDORADO_52);
+        function pop_9DEJULIO_53(feature, layer) {
+        }
+
+        function style_9DEJULIO_53_0() {
+            return {
+                pane: 'pane_9DEJULIO_53',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_9DEJULIO_53');
+        map.getPane('pane_9DEJULIO_53').style.zIndex = 453;
+        map.getPane('pane_9DEJULIO_53').style['mix-blend-mode'] = 'normal';
+        var layer_9DEJULIO_53 = new L.geoJson(json_9DEJULIO_53, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_9DEJULIO_53',
+            layerName: 'layer_9DEJULIO_53',
+            pane: 'pane_9DEJULIO_53',
+            onEachFeature: pop_9DEJULIO_53,
+            style: style_9DEJULIO_53_0,
+        });
+        bounds_group.addLayer(layer_9DEJULIO_53);
+        function pop_COLONIADELICIA_54(feature, layer) {
+        }
+
+        function style_COLONIADELICIA_54_0() {
+            return {
+                pane: 'pane_COLONIADELICIA_54',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,60,57,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COLONIADELICIA_54');
+        map.getPane('pane_COLONIADELICIA_54').style.zIndex = 454;
+        map.getPane('pane_COLONIADELICIA_54').style['mix-blend-mode'] = 'normal';
+        var layer_COLONIADELICIA_54 = new L.geoJson(json_COLONIADELICIA_54, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COLONIADELICIA_54',
+            layerName: 'layer_COLONIADELICIA_54',
+            pane: 'pane_COLONIADELICIA_54',
+            onEachFeature: pop_COLONIADELICIA_54,
+            style: style_COLONIADELICIA_54_0,
+        });
+        bounds_group.addLayer(layer_COLONIADELICIA_54);
+        function pop_COLONIAVICTORIA_55(feature, layer) {
+        }
+
+        function style_COLONIAVICTORIA_55_0() {
+            return {
+                pane: 'pane_COLONIAVICTORIA_55',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COLONIAVICTORIA_55');
+        map.getPane('pane_COLONIAVICTORIA_55').style.zIndex = 455;
+        map.getPane('pane_COLONIAVICTORIA_55').style['mix-blend-mode'] = 'normal';
+        var layer_COLONIAVICTORIA_55 = new L.geoJson(json_COLONIAVICTORIA_55, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COLONIAVICTORIA_55',
+            layerName: 'layer_COLONIAVICTORIA_55',
+            pane: 'pane_COLONIAVICTORIA_55',
+            onEachFeature: pop_COLONIAVICTORIA_55,
+            style: style_COLONIAVICTORIA_55_0,
+        });
+        bounds_group.addLayer(layer_COLONIAVICTORIA_55);
+        function pop_SANTIAGODELINIERS_56(feature, layer) {
+        }
+
+        function style_SANTIAGODELINIERS_56_0() {
+            return {
+                pane: 'pane_SANTIAGODELINIERS_56',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANTIAGODELINIERS_56');
+        map.getPane('pane_SANTIAGODELINIERS_56').style.zIndex = 456;
+        map.getPane('pane_SANTIAGODELINIERS_56').style['mix-blend-mode'] = 'normal';
+        var layer_SANTIAGODELINIERS_56 = new L.geoJson(json_SANTIAGODELINIERS_56, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANTIAGODELINIERS_56',
+            layerName: 'layer_SANTIAGODELINIERS_56',
+            pane: 'pane_SANTIAGODELINIERS_56',
+            onEachFeature: pop_SANTIAGODELINIERS_56,
+            style: style_SANTIAGODELINIERS_56_0,
+        });
+        bounds_group.addLayer(layer_SANTIAGODELINIERS_56);
+        function pop_CONCEPCION_57(feature, layer) {
+        }
+
+        function style_CONCEPCION_57_0() {
+            return {
+                pane: 'pane_CONCEPCION_57',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CONCEPCION_57');
+        map.getPane('pane_CONCEPCION_57').style.zIndex = 457;
+        map.getPane('pane_CONCEPCION_57').style['mix-blend-mode'] = 'normal';
+        var layer_CONCEPCION_57 = new L.geoJson(json_CONCEPCION_57, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CONCEPCION_57',
+            layerName: 'layer_CONCEPCION_57',
+            pane: 'pane_CONCEPCION_57',
+            onEachFeature: pop_CONCEPCION_57,
+            style: style_CONCEPCION_57_0,
+        });
+        bounds_group.addLayer(layer_CONCEPCION_57);
+        function pop_SANTAMARIA_58(feature, layer) {
+        }
+
+        function style_SANTAMARIA_58_0() {
+            return {
+                pane: 'pane_SANTAMARIA_58',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANTAMARIA_58');
+        map.getPane('pane_SANTAMARIA_58').style.zIndex = 458;
+        map.getPane('pane_SANTAMARIA_58').style['mix-blend-mode'] = 'normal';
+        var layer_SANTAMARIA_58 = new L.geoJson(json_SANTAMARIA_58, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANTAMARIA_58',
+            layerName: 'layer_SANTAMARIA_58',
+            pane: 'pane_SANTAMARIA_58',
+            onEachFeature: pop_SANTAMARIA_58,
+            style: style_SANTAMARIA_58_0,
+        });
+        bounds_group.addLayer(layer_SANTAMARIA_58);
+        function pop_POSADAS_59(feature, layer) {
+        }
+
+        function style_POSADAS_59_0() {
+            return {
+                pane: 'pane_POSADAS_59',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(114,155,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_POSADAS_59');
+        map.getPane('pane_POSADAS_59').style.zIndex = 459;
+        map.getPane('pane_POSADAS_59').style['mix-blend-mode'] = 'normal';
+        var layer_POSADAS_59 = new L.geoJson(json_POSADAS_59, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_POSADAS_59',
+            layerName: 'layer_POSADAS_59',
+            pane: 'pane_POSADAS_59',
+            onEachFeature: pop_POSADAS_59,
+            style: style_POSADAS_59_0,
+        });
+        bounds_group.addLayer(layer_POSADAS_59);
+        function pop_GARUPA_60(feature, layer) {
+        }
+
+        function style_GARUPA_60_0() {
+            return {
+                pane: 'pane_GARUPA_60',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_GARUPA_60');
+        map.getPane('pane_GARUPA_60').style.zIndex = 460;
+        map.getPane('pane_GARUPA_60').style['mix-blend-mode'] = 'normal';
+        var layer_GARUPA_60 = new L.geoJson(json_GARUPA_60, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_GARUPA_60',
+            layerName: 'layer_GARUPA_60',
+            pane: 'pane_GARUPA_60',
+            onEachFeature: pop_GARUPA_60,
+            style: style_GARUPA_60_0,
+        });
+        bounds_group.addLayer(layer_GARUPA_60);
+        function pop_FACHINAL_61(feature, layer) {
+        }
+
+        function style_FACHINAL_61_0() {
+            return {
+                pane: 'pane_FACHINAL_61',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_FACHINAL_61');
+        map.getPane('pane_FACHINAL_61').style.zIndex = 461;
+        map.getPane('pane_FACHINAL_61').style['mix-blend-mode'] = 'normal';
+        var layer_FACHINAL_61 = new L.geoJson(json_FACHINAL_61, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_FACHINAL_61',
+            layerName: 'layer_FACHINAL_61',
+            pane: 'pane_FACHINAL_61',
+            onEachFeature: pop_FACHINAL_61,
+            style: style_FACHINAL_61_0,
+        });
+        bounds_group.addLayer(layer_FACHINAL_61);
+        function pop_SANTAANA_62(feature, layer) {
+        }
+
+        function style_SANTAANA_62_0() {
+            return {
+                pane: 'pane_SANTAANA_62',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(152,125,183,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANTAANA_62');
+        map.getPane('pane_SANTAANA_62').style.zIndex = 462;
+        map.getPane('pane_SANTAANA_62').style['mix-blend-mode'] = 'normal';
+        var layer_SANTAANA_62 = new L.geoJson(json_SANTAANA_62, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANTAANA_62',
+            layerName: 'layer_SANTAANA_62',
+            pane: 'pane_SANTAANA_62',
+            onEachFeature: pop_SANTAANA_62,
+            style: style_SANTAANA_62_0,
+        });
+        bounds_group.addLayer(layer_SANTAANA_62);
+        function pop_BONPLAND_63(feature, layer) {
+        }
+
+        function style_BONPLAND_63_0() {
+            return {
+                pane: 'pane_BONPLAND_63',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(231,113,72,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_BONPLAND_63');
+        map.getPane('pane_BONPLAND_63').style.zIndex = 463;
+        map.getPane('pane_BONPLAND_63').style['mix-blend-mode'] = 'normal';
+        var layer_BONPLAND_63 = new L.geoJson(json_BONPLAND_63, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_BONPLAND_63',
+            layerName: 'layer_BONPLAND_63',
+            pane: 'pane_BONPLAND_63',
+            onEachFeature: pop_BONPLAND_63,
+            style: style_BONPLAND_63_0,
+        });
+        bounds_group.addLayer(layer_BONPLAND_63);
+        function pop_CANDELARIA_64(feature, layer) {
+        }
+
+        function style_CANDELARIA_64_0() {
+            return {
+                pane: 'pane_CANDELARIA_64',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(183,72,75,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CANDELARIA_64');
+        map.getPane('pane_CANDELARIA_64').style.zIndex = 464;
+        map.getPane('pane_CANDELARIA_64').style['mix-blend-mode'] = 'normal';
+        var layer_CANDELARIA_64 = new L.geoJson(json_CANDELARIA_64, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CANDELARIA_64',
+            layerName: 'layer_CANDELARIA_64',
+            pane: 'pane_CANDELARIA_64',
+            onEachFeature: pop_CANDELARIA_64,
+            style: style_CANDELARIA_64_0,
+        });
+        bounds_group.addLayer(layer_CANDELARIA_64);
+        function pop_CERROCORA_65(feature, layer) {
+        }
+
+        function style_CERROCORA_65_0() {
+            return {
+                pane: 'pane_CERROCORA_65',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,158,23,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CERROCORA_65');
+        map.getPane('pane_CERROCORA_65').style.zIndex = 465;
+        map.getPane('pane_CERROCORA_65').style['mix-blend-mode'] = 'normal';
+        var layer_CERROCORA_65 = new L.geoJson(json_CERROCORA_65, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CERROCORA_65',
+            layerName: 'layer_CERROCORA_65',
+            pane: 'pane_CERROCORA_65',
+            onEachFeature: pop_CERROCORA_65,
+            style: style_CERROCORA_65_0,
+        });
+        bounds_group.addLayer(layer_CERROCORA_65);
+        function pop_LORETO_66(feature, layer) {
+        }
+
+        function style_LORETO_66_0() {
+            return {
+                pane: 'pane_LORETO_66',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(232,113,141,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_LORETO_66');
+        map.getPane('pane_LORETO_66').style.zIndex = 466;
+        map.getPane('pane_LORETO_66').style['mix-blend-mode'] = 'normal';
+        var layer_LORETO_66 = new L.geoJson(json_LORETO_66, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_LORETO_66',
+            layerName: 'layer_LORETO_66',
+            pane: 'pane_LORETO_66',
+            onEachFeature: pop_LORETO_66,
+            style: style_LORETO_66_0,
+        });
+        bounds_group.addLayer(layer_LORETO_66);
+        function pop_MARTIRES_67(feature, layer) {
+        }
+
+        function style_MARTIRES_67_0() {
+            return {
+                pane: 'pane_MARTIRES_67',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(141,90,153,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_MARTIRES_67');
+        map.getPane('pane_MARTIRES_67').style.zIndex = 467;
+        map.getPane('pane_MARTIRES_67').style['mix-blend-mode'] = 'normal';
+        var layer_MARTIRES_67 = new L.geoJson(json_MARTIRES_67, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_MARTIRES_67',
+            layerName: 'layer_MARTIRES_67',
+            pane: 'pane_MARTIRES_67',
+            onEachFeature: pop_MARTIRES_67,
+            style: style_MARTIRES_67_0,
+        });
+        bounds_group.addLayer(layer_MARTIRES_67);
+        function pop_PROFUNDIDAD_68(feature, layer) {
+        }
+
+        function style_PROFUNDIDAD_68_0() {
+            return {
+                pane: 'pane_PROFUNDIDAD_68',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(243,166,178,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_PROFUNDIDAD_68');
+        map.getPane('pane_PROFUNDIDAD_68').style.zIndex = 468;
+        map.getPane('pane_PROFUNDIDAD_68').style['mix-blend-mode'] = 'normal';
+        var layer_PROFUNDIDAD_68 = new L.geoJson(json_PROFUNDIDAD_68, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_PROFUNDIDAD_68',
+            layerName: 'layer_PROFUNDIDAD_68',
+            pane: 'pane_PROFUNDIDAD_68',
+            onEachFeature: pop_PROFUNDIDAD_68,
+            style: style_PROFUNDIDAD_68_0,
+        });
+        bounds_group.addLayer(layer_PROFUNDIDAD_68);
+        function pop_CAMPOGRANDE_69(feature, layer) {
+        }
+
+        function style_CAMPOGRANDE_69_0() {
+            return {
+                pane: 'pane_CAMPOGRANDE_69',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,182,54,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_CAMPOGRANDE_69');
+        map.getPane('pane_CAMPOGRANDE_69').style.zIndex = 469;
+        map.getPane('pane_CAMPOGRANDE_69').style['mix-blend-mode'] = 'normal';
+        var layer_CAMPOGRANDE_69 = new L.geoJson(json_CAMPOGRANDE_69, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_CAMPOGRANDE_69',
+            layerName: 'layer_CAMPOGRANDE_69',
+            pane: 'pane_CAMPOGRANDE_69',
+            onEachFeature: pop_CAMPOGRANDE_69,
+            style: style_CAMPOGRANDE_69_0,
+        });
+        bounds_group.addLayer(layer_CAMPOGRANDE_69);
+        function pop_ARISTOBULO_70(feature, layer) {
+        }
+
+        function style_ARISTOBULO_70_0() {
+            return {
+                pane: 'pane_ARISTOBULO_70',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(225,89,137,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ARISTOBULO_70');
+        map.getPane('pane_ARISTOBULO_70').style.zIndex = 470;
+        map.getPane('pane_ARISTOBULO_70').style['mix-blend-mode'] = 'normal';
+        var layer_ARISTOBULO_70 = new L.geoJson(json_ARISTOBULO_70, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ARISTOBULO_70',
+            layerName: 'layer_ARISTOBULO_70',
+            pane: 'pane_ARISTOBULO_70',
+            onEachFeature: pop_ARISTOBULO_70,
+            style: style_ARISTOBULO_70_0,
+        });
+        bounds_group.addLayer(layer_ARISTOBULO_70);
+        function pop_2DEMAYO_71(feature, layer) {
+        }
+
+        function style_2DEMAYO_71_0() {
+            return {
+                pane: 'pane_2DEMAYO_71',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,207,80,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_2DEMAYO_71');
+        map.getPane('pane_2DEMAYO_71').style.zIndex = 471;
+        map.getPane('pane_2DEMAYO_71').style['mix-blend-mode'] = 'normal';
+        var layer_2DEMAYO_71 = new L.geoJson(json_2DEMAYO_71, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_2DEMAYO_71',
+            layerName: 'layer_2DEMAYO_71',
+            pane: 'pane_2DEMAYO_71',
+            onEachFeature: pop_2DEMAYO_71,
+            style: style_2DEMAYO_71_0,
+        });
+        bounds_group.addLayer(layer_2DEMAYO_71);
+        function pop_APOSTOLES_72(feature, layer) {
+        }
+
+        function style_APOSTOLES_72_0() {
+            return {
+                pane: 'pane_APOSTOLES_72',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,139,143,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_APOSTOLES_72');
+        map.getPane('pane_APOSTOLES_72').style.zIndex = 472;
+        map.getPane('pane_APOSTOLES_72').style['mix-blend-mode'] = 'normal';
+        var layer_APOSTOLES_72 = new L.geoJson(json_APOSTOLES_72, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_APOSTOLES_72',
+            layerName: 'layer_APOSTOLES_72',
+            pane: 'pane_APOSTOLES_72',
+            onEachFeature: pop_APOSTOLES_72,
+            style: style_APOSTOLES_72_0,
+        });
+        bounds_group.addLayer(layer_APOSTOLES_72);
+        function pop_AZARA_73(feature, layer) {
+        }
+
+        function style_AZARA_73_0() {
+            return {
+                pane: 'pane_AZARA_73',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(145,82,45,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_AZARA_73');
+        map.getPane('pane_AZARA_73').style.zIndex = 473;
+        map.getPane('pane_AZARA_73').style['mix-blend-mode'] = 'normal';
+        var layer_AZARA_73 = new L.geoJson(json_AZARA_73, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_AZARA_73',
+            layerName: 'layer_AZARA_73',
+            pane: 'pane_AZARA_73',
+            onEachFeature: pop_AZARA_73,
+            style: style_AZARA_73_0,
+        });
+        bounds_group.addLayer(layer_AZARA_73);
+        function pop_SANJOSE_74(feature, layer) {
+        }
+
+        function style_SANJOSE_74_0() {
+            return {
+                pane: 'pane_SANJOSE_74',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(190,178,151,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_SANJOSE_74');
+        map.getPane('pane_SANJOSE_74').style.zIndex = 474;
+        map.getPane('pane_SANJOSE_74').style['mix-blend-mode'] = 'normal';
+        var layer_SANJOSE_74 = new L.geoJson(json_SANJOSE_74, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_SANJOSE_74',
+            layerName: 'layer_SANJOSE_74',
+            pane: 'pane_SANJOSE_74',
+            onEachFeature: pop_SANJOSE_74,
+            style: style_SANJOSE_74_0,
+        });
+        bounds_group.addLayer(layer_SANJOSE_74);
+        function pop_TRESCAPONES_75(feature, layer) {
+        }
+
+        function style_TRESCAPONES_75_0() {
+            return {
+                pane: 'pane_TRESCAPONES_75',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(196,60,57,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_TRESCAPONES_75');
+        map.getPane('pane_TRESCAPONES_75').style.zIndex = 475;
+        map.getPane('pane_TRESCAPONES_75').style['mix-blend-mode'] = 'normal';
+        var layer_TRESCAPONES_75 = new L.geoJson(json_TRESCAPONES_75, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_TRESCAPONES_75',
+            layerName: 'layer_TRESCAPONES_75',
+            pane: 'pane_TRESCAPONES_75',
+            onEachFeature: pop_TRESCAPONES_75,
+            style: style_TRESCAPONES_75_0,
+        });
+        bounds_group.addLayer(layer_TRESCAPONES_75);
+        function pop_ALBAPOSSE_76(feature, layer) {
+        }
+
+        function style_ALBAPOSSE_76_0() {
+            return {
+                pane: 'pane_ALBAPOSSE_76',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(213,180,60,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_ALBAPOSSE_76');
+        map.getPane('pane_ALBAPOSSE_76').style.zIndex = 476;
+        map.getPane('pane_ALBAPOSSE_76').style['mix-blend-mode'] = 'normal';
+        var layer_ALBAPOSSE_76 = new L.geoJson(json_ALBAPOSSE_76, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_ALBAPOSSE_76',
+            layerName: 'layer_ALBAPOSSE_76',
+            pane: 'pane_ALBAPOSSE_76',
+            onEachFeature: pop_ALBAPOSSE_76,
+            style: style_ALBAPOSSE_76_0,
+        });
+        bounds_group.addLayer(layer_ALBAPOSSE_76);
+        function pop_COLONIAAURORA_77(feature, layer) {
+        }
+
+        function style_COLONIAAURORA_77_0() {
+            return {
+                pane: 'pane_COLONIAAURORA_77',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(164,113,88,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_COLONIAAURORA_77');
+        map.getPane('pane_COLONIAAURORA_77').style.zIndex = 477;
+        map.getPane('pane_COLONIAAURORA_77').style['mix-blend-mode'] = 'normal';
+        var layer_COLONIAAURORA_77 = new L.geoJson(json_COLONIAAURORA_77, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_COLONIAAURORA_77',
+            layerName: 'layer_COLONIAAURORA_77',
+            pane: 'pane_COLONIAAURORA_77',
+            onEachFeature: pop_COLONIAAURORA_77,
+            style: style_COLONIAAURORA_77_0,
+        });
+        bounds_group.addLayer(layer_COLONIAAURORA_77);
+        function pop_25DEMAYO_78(feature, layer) {
+        }
+
+        function style_25DEMAYO_78_0() {
+            return {
+                pane: 'pane_25DEMAYO_78',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(133,182,111,1.0)',
+                interactive: false,
+            }
+        }
+        map.createPane('pane_25DEMAYO_78');
+        map.getPane('pane_25DEMAYO_78').style.zIndex = 478;
+        map.getPane('pane_25DEMAYO_78').style['mix-blend-mode'] = 'normal';
+        var layer_25DEMAYO_78 = new L.geoJson(json_25DEMAYO_78, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_25DEMAYO_78',
+            layerName: 'layer_25DEMAYO_78',
+            pane: 'pane_25DEMAYO_78',
+            onEachFeature: pop_25DEMAYO_78,
+            style: style_25DEMAYO_78_0,
+        });
+        bounds_group.addLayer(layer_25DEMAYO_78);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/25DEMAYO_78.png" /> 25 DE MAYO': layer_25DEMAYO_78,'<img src="legend/COLONIAAURORA_77.png" /> COLONIA AURORA': layer_COLONIAAURORA_77,'<img src="legend/ALBAPOSSE_76.png" /> ALBA POSSE': layer_ALBAPOSSE_76,'<img src="legend/TRESCAPONES_75.png" /> TRES CAPONES': layer_TRESCAPONES_75,'<img src="legend/SANJOSE_74.png" /> SAN JOSE': layer_SANJOSE_74,'<img src="legend/AZARA_73.png" /> AZARA': layer_AZARA_73,'<img src="legend/APOSTOLES_72.png" /> APOSTOLES': layer_APOSTOLES_72,'<img src="legend/2DEMAYO_71.png" /> 2 DE MAYO': layer_2DEMAYO_71,'<img src="legend/ARISTOBULO_70.png" /> ARISTOBULO': layer_ARISTOBULO_70,'<img src="legend/CAMPOGRANDE_69.png" /> CAMPO GRANDE': layer_CAMPOGRANDE_69,'<img src="legend/PROFUNDIDAD_68.png" /> PROFUNDIDAD': layer_PROFUNDIDAD_68,'<img src="legend/MARTIRES_67.png" /> MARTIRES': layer_MARTIRES_67,'<img src="legend/LORETO_66.png" /> LORETO': layer_LORETO_66,'<img src="legend/CERROCORA_65.png" /> CERRO CORA': layer_CERROCORA_65,'<img src="legend/CANDELARIA_64.png" /> CANDELARIA': layer_CANDELARIA_64,'<img src="legend/BONPLAND_63.png" /> BONPLAND': layer_BONPLAND_63,'<img src="legend/SANTAANA_62.png" /> SANTA ANA': layer_SANTAANA_62,'<img src="legend/FACHINAL_61.png" /> FACHINAL': layer_FACHINAL_61,'<img src="legend/GARUPA_60.png" /> GARUPA': layer_GARUPA_60,'<img src="legend/POSADAS_59.png" /> POSADAS': layer_POSADAS_59,'<img src="legend/SANTAMARIA_58.png" /> SANTA MARIA': layer_SANTAMARIA_58,'<img src="legend/CONCEPCION_57.png" /> CONCEPCION': layer_CONCEPCION_57,'<img src="legend/SANTIAGODELINIERS_56.png" /> SANTIAGO DE LINIERS': layer_SANTIAGODELINIERS_56,'<img src="legend/COLONIAVICTORIA_55.png" /> COLONIA VICTORIA': layer_COLONIAVICTORIA_55,'<img src="legend/COLONIADELICIA_54.png" /> COLONIA DELICIA': layer_COLONIADELICIA_54,'<img src="legend/9DEJULIO_53.png" /> 9 DE JULIO': layer_9DEJULIO_53,'<img src="legend/ELDORADO_52.png" /> ELDORADO': layer_ELDORADO_52,'<img src="legend/SANANTONIO_51.png" /> SAN ANTONIO': layer_SANANTONIO_51,'<img src="legend/COMANDANTEANDRESITO_50.png" /> COMANDANTE ANDRESITO': layer_COMANDANTEANDRESITO_50,'<img src="legend/BERNARDOIRIGOYEN_49.png" /> BERNARDO IRIGOYEN': layer_BERNARDOIRIGOYEN_49,'<img src="legend/ELSOBERBIO_48.png" /> EL SOBERBIO': layer_ELSOBERBIO_48,'<img src="legend/SANVICENTE_47.png" /> SAN VICENTE': layer_SANVICENTE_47,'<img src="legend/LIBERTAD_46.png" /> LIBERTAD': layer_LIBERTAD_46,'<img src="legend/IGUAZU_45.png" /> IGUAZU': layer_IGUAZU_45,'<img src="legend/WANDA_44.png" /> WANDA': layer_WANDA_44,'<img src="legend/ESPERANZA_43.png" /> ESPERANZA': layer_ESPERANZA_43,'<img src="legend/OLEGARIOVANDRADE_42.png" /> OLEGARIO V. ANDRADE': layer_OLEGARIOVANDRADE_42,'<img src="legend/GOBERNADORLOPEZ_41.png" /> GOBERNADOR LOPEZ': layer_GOBERNADORLOPEZ_41,'<img src="legend/DOSARROYOS_40.png" /> DOS ARROYOS': layer_DOSARROYOS_40,'<img src="legend/CERROAZUL_39.png" /> CERRO AZUL': layer_CERROAZUL_39,'<img src="legend/CAAYARI_38.png" /> CAA YARI': layer_CAAYARI_38,'<img src="legend/ARROYODELMEDIO_37.png" /> ARROYO DEL MEDIO': layer_ARROYODELMEDIO_37,'<img src="legend/ALMAFUERTE_36.png" /> ALMAFUERTE': layer_ALMAFUERTE_36,'<img src="legend/LEANDRONALEM_35.png" /> LEANDRO N. ALEM': layer_LEANDRONALEM_35,'<img src="legend/RUIZDEMONTOYA_34.png" /> RUIZ DE MONTOYA': layer_RUIZDEMONTOYA_34,'<img src="legend/PUERTOLEONI_33.png" /> PUERTO LEONI': layer_PUERTOLEONI_33,'<img src="legend/GARUHAPE_32.png" /> GARUHAPE': layer_GARUHAPE_32,'<img src="legend/ELALCAZAR_31.png" /> EL ALCAZAR': layer_ELALCAZAR_31,'<img src="legend/CAPIOVI_30.png" /> CAPIOVI': layer_CAPIOVI_30,'<img src="legend/PUERTORICO_29.png" /> PUERTO RICO': layer_PUERTORICO_29,'<img src="legend/PUERTOPIRAY_28.png" /> PUERTO PIRAY': layer_PUERTOPIRAY_28,'<img src="legend/CARAGUATAY_27.png" /> CARAGUATAY': layer_CARAGUATAY_27,'<img src="legend/MONTECARLO_26.png" /> MONTECARLO': layer_MONTECARLO_26,'<img src="legend/SANMARTIN_25.png" /> SAN MARTIN': layer_SANMARTIN_25,'<img src="legend/PANAMBI_24.png" /> PANAMBI': layer_PANAMBI_24,'<img src="legend/LOSHELECHOS_23.png" /> LOS HELECHOS': layer_LOSHELECHOS_23,'<img src="legend/GUARANI_22.png" /> GUARANI': layer_GUARANI_22,'<img src="legend/GRALALVEAR_21.png" /> GRAL ALVEAR': layer_GRALALVEAR_21,'<img src="legend/COLONIAALBERDI_20.png" /> COLONIA ALBERDI': layer_COLONIAALBERDI_20,'<img src="legend/CAMPOVIERA_19.png" /> CAMPO VIERA': layer_CAMPOVIERA_19,'<img src="legend/CAMPORAMON_18.png" /> CAMPO RAMON': layer_CAMPORAMON_18,'<img src="legend/OBERA_17.png" /> OBERA': layer_OBERA_17,'<img src="legend/SANTOPIPO_16.png" /> SANTO PIPO': layer_SANTOPIPO_16,'<img src="legend/JARDINAMERICA_15.png" /> JARDIN AMERICA': layer_JARDINAMERICA_15,'<img src="legend/HIPOLITOYRIGOYEN_14.png" /> HIPOLITO YRIGOYEN': layer_HIPOLITOYRIGOYEN_14,'<img src="legend/GOBERNADORROCA_13.png" /> GOBERNADOR ROCA': layer_GOBERNADORROCA_13,'<img src="legend/GRALURQUIZA_12.png" /> GRAL URQUIZA': layer_GRALURQUIZA_12,'<img src="legend/CORPUS_11.png" /> CORPUS': layer_CORPUS_11,'<img src="legend/COLONIAPOLANA_10.png" /> COLONIA POLANA': layer_COLONIAPOLANA_10,'<img src="legend/SANIGNACIO_9.png" /> SAN IGNACIO': layer_SANIGNACIO_9,'<img src="legend/MOJONGRANDE_8.png" /> MOJON GRANDE': layer_MOJONGRANDE_8,'<img src="legend/ITACARUARE_7.png" /> ITACARUARE': layer_ITACARUARE_7,'<img src="legend/FLORENTINOAMEGHINO_6.png" /> FLORENTINO AMEGHINO': layer_FLORENTINOAMEGHINO_6,'<img src="legend/SANJAVIER_5.png" /> SAN JAVIER': layer_SANJAVIER_5,'<img src="legend/POZOAZUL_4.png" /> POZO AZUL': layer_POZOAZUL_4,'<img src="legend/SANPEDRO_3.png" /> SAN PEDRO': layer_SANPEDRO_3,'<img src="legend/MAPA_MUNICIPIOS_2.png" /> MAPA_MUNICIPIOS': layer_MAPA_MUNICIPIOS_2,'<img src="legend/MAPA_DEPARTAMENTOS_1.png" /> MAPA_DEPARTAMENTOS': layer_MAPA_DEPARTAMENTOS_1,"marandu": layer_marandu_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_MAPA_MUNICIPIOS_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['NOMBRE'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Arial\', sans-serif;">' + layer.feature.properties['NOMBRE']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_MAPA_MUNICIPIOS_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_MAPA_MUNICIPIOS_2]);
+        map.on("zoomend", function(){
+            resetLabels([layer_MAPA_MUNICIPIOS_2]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_MAPA_MUNICIPIOS_2]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_MAPA_MUNICIPIOS_2]);
+        });
+        </script>
+    </body>
+</html>
